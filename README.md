@@ -14,6 +14,12 @@ You will need to download the jars listed in /WebContent/WEB-INF/lib/libs needed
 There is a .war you can deploy to your Tomcat instance at /Planning/formulate.war<br>
 The downloaded jars will need to be placed in the /WEB-INF/lib folder of the expanded war, they are not included!
 <br><br>
+If you actually get the app running here are some URL's to try.<br>
+Be sure to update the server and port as necessary. This assumes the webapp is deployed to the 'formulate' context.<br>
+localhost:8080/formulate/docs.html<br>
+localhost:8080/formulate/edit/fbn/productform (login with admin/test)<br>
+localhost:8080/formulate/form/fbn/productform
+<br><br>
 Formulate makes use of the following Java Libraries:<br>
 Stripes 1.5.6 - http://www.stripesframework.com<br>
 ORM Lite 4.4.0 - http://www.ormlite.com<br>
