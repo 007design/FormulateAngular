@@ -1,0 +1,26 @@
+<div id="formsList" class="span6">
+	<h2>Views</h2>
+	
+	<div class="well">
+		<ul class="nav nav-list">
+			<li ng-repeat="v in userViews">
+				<div class="pull-right" style="margin-left:10px;">
+					<a href="{{contextPath}}/form/{{v.view.account.alias}}/{{v.view.alias}}" target="_blank" ng-show="v.view.enableInput">Input</a>
+					<span ng-hide="v.view.enableInput">Input</span>
+				</div>
+				<div class="pull-right" style="margin-left:10px;">
+					<a href="{{contextPath}}/form/{{v.view.account.alias}}/{{v.view.alias}}" target="_blank" ng-show="v.view.enableDashboard">Dashboard</a>
+					<span ng-hide="v.view.enableDashboard">Dashboard</span>
+				</div>
+				<div class="pull-right" style="margin-left:10px;">
+					<a href="{{contextPath}}/form/{{v.view.account.alias}}/{{v.view.alias}}" target="_blank" ng-show="v.view.enableUpdate">Update</a>
+					<span ng-hide="v.view.enableUpdate">Update</span>
+				</div>
+				
+				<a href="{{contextPath}}/edit/{{v.view.account.alias}}/{{v.view.alias}}" ng-show="v.edit">{{v.view.name}}</a>				
+				<span ng-hide="v.edit">{{v.view.name}}</span>
+			</li>
+		</ul>
+		
+	</div>	
+</div>

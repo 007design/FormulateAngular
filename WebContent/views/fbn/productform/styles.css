@@ -1,0 +1,179 @@
+/**
+ * Bootstrap Overrides
+ */
+.form-horizontal .control-label {
+	width:160px;
+}
+.form-horizontal .controls {
+	margin-left:180px;
+}
+
+.form-horizontal .controls.display-value input {
+	background-color:#f0f0f0;
+	color:#000;
+}
+
+/**
+ * Other Stuff
+ */
+
+#inputFormArea {
+	background:#cad6da url('../header-bg.jpg') top center repeat-x;
+}
+
+#headerArea {
+	height:76px;
+	position:relative;
+	margin-bottom:10px;
+}
+
+#headerRight {
+	float:right;
+	background:url('../header-right.jpg') top right no-repeat;
+	height:76px;
+	width:335px;
+}
+#headerLeft { 
+	float:left; 
+	background:url('../header-left.jpg') top left no-repeat;
+	height:76px;
+	width:226px;
+}
+
+.fieldInputArea_checkboxes {
+	font-size:11px;
+} 
+
+.fieldLabelArea {
+	width:120px;
+}
+
+#fieldInputArea-level1 div,
+#fieldInputArea-level3 div {
+	float:left;
+	width:130px;
+}
+
+#fieldInputArea-level3 {
+	width:950px;
+}
+#fieldInputArea-level1 label,
+#fieldInputArea-level2Bau label,
+#fieldInputArea-level2Cps label,
+#fieldInputArea-level2SbtCorp label,
+#fieldInputArea-level2SbtVertical label,
+#fieldInputArea-level2Fis label,
+#fieldInputArea-level2Ses label,
+#fieldInputArea-level3 label {
+	font-size:11px !important;
+}
+
+#viewFieldRow-level2Bau {
+	position:relative;
+	left:120px;
+	width:0px;
+	float:left;
+	height:120px;
+}
+
+#viewFieldRow-level2Bau .control-label,
+#viewFieldRow-level2Cps .control-label,
+#viewFieldRow-level2SbtCorp .control-label,
+#viewFieldRow-level2SbtVertical .control-label,
+#viewFieldRow-level2Ses .control-label,
+#viewFieldRow-level2Fis .control-label {
+	text-align:left;
+	font-size:11px;
+	font-weight:bold; 
+	 
+}
+
+
+#viewFieldRow-level2Bau .control-label {
+	margin:-10px 0 0 60px;
+}
+#viewFieldRow-level2Cps .control-label {
+	margin:-10px 0 0 310px;
+}
+#viewFieldRow-level2SbtCorp .control-label {
+	margin:-10px 0 0 440px;
+}
+#viewFieldRow-level2SbtVertical .control-label {
+	margin:-10px 0 0 570px;
+}
+#viewFieldRow-level2Ses .control-label {
+	margin:-10px 0 0 700px;
+}
+#viewFieldRow-level2Fis .control-label {
+	margin:-10px 0 0 830px;
+}
+
+#viewFieldRow-level2Bau .controls {
+	position:absolute;
+	width:150px;
+	margin-top:5px;
+	margin-left:60px;
+}
+#viewFieldRow-level2Cps {
+	position:relative;
+	width:0px;
+	float:left;
+	height:85px;
+}
+#viewFieldRow-level2Cps .controls {
+	position:absolute;
+	width:150px;
+	margin-top:5px;
+	margin-left:310px;
+}
+#viewFieldRow-level2SbtCorp {
+	position:relative;
+	width:0px;
+	float:left;
+	height:85px;
+}
+#viewFieldRow-level2SbtCorp .controls {
+	position:absolute;
+	width:150px;
+	margin-top:5px;
+	margin-left:440px;
+}
+#viewFieldRow-level2SbtVertical {
+	position:relative;
+	width:0px;
+	float:left;
+	height:160px;
+}
+#viewFieldRow-level2SbtVertical .controls {
+	position:absolute;
+	width:150px;
+	margin-top:5px;
+	margin-left:570px;
+}
+#viewFieldRow-level2Fis {
+	position:relative;
+	width:0px;
+	float:left;
+	height:110px;
+}
+#viewFieldRow-level2Fis .controls {
+	position:absolute;
+	width:150px;
+	margin-top:5px;
+	margin-left:700px;
+}
+#viewFieldRow-level2Ses {
+	position:relative;
+	width:0px;
+	float:left;
+	height:200px;
+}
+#viewFieldRow-level2Ses .controls {
+	position:absolute;
+	width:150px;
+	margin-top:5px;
+	margin-left:830px;
+}
+#viewFieldRow-level3 {	
+	clear:both;
+}

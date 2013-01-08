@@ -1,0 +1,78 @@
+<div class="container">
+	 
+	<div class="row" ng-repeat="e in editorSvc.view.events">
+		
+		<div class="span4">
+			<ng-form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="initialInput">Evaluate event on</label>
+					<div class="controls">
+						<select ng-model="e.initial" id="initialInput">
+							<option value="0">Initial submissions</option>
+							<option value="1">Submission updates</option>
+							<option value="2">Both</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="targetInput">Target</label>				
+					<div class="controls">
+						<select ng-options="v.id as v.name for (k,v) in editorSvc.form.fields"
+								id="targetInput"
+								ng-model="e.target.id"								
+								required></select>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="valueInput">Value</label>
+					<div class="controls">
+						<input type="text" ng-model="e.value" id="valueInput" required/>
+					</div>					
+				</div>
+				
+			</ng-form>
+		</div>
+				
+		<div class="span8">
+			<fieldset>
+				<legend>Conditions</legend>
+				
+				<div class="row form-inline" ng-repeat="ec in e.eventConditions">						
+								   								   
+					<div type="text" class="span3 pull-left">
+						<select ng-options="v.id as v.name for (k,v) in editorSvc.form.fields"
+								ng-model="ec.target.id"
+								ng-required="e.eventConditions[0]!=ec"></select>
+					</div>
+					
+					<div class="span2 pull-left">
+						<select ng-options="v.id as v.name for (k,v) in comparisonTypes"									
+								class="input-small"
+								ng-model="ec.comparison"
+								required></select>
+					</div>
+					
+					<div class="span2 pull-left">
+						<input type="text" class="input-medium" ng-model="ec.value" placeholder="Value" required/>
+					</div>
+					
+					<button class="btn pull-right"
+						    ng-click="e.eventConditions.splice($index,1)">
+						<i class="icon-remove"></i>
+					</button>					
+					
+				</div>
+				
+				<input type="button" 
+					   value="add condition"
+					   ng-click="addEventCondition(e.eventConditions)"/>	
+															
+			</fieldset>
+		</div>
+	</div>
+	
+	<input type="button" value="new event" ng-click="addEvent()"/>
+					
+</div>

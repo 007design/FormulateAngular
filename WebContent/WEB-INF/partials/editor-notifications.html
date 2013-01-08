@@ -1,0 +1,135 @@
+<div class="container">
+		
+	<div class="row" ng-repeat="n in editorSvc.view.notifications">
+		
+		<div class="span12">
+			<div class="row">
+				<!-- Message attributes -->
+				<div class="span5">
+					<fieldset>
+						<legend>Message Properties</legend>
+						<ng-form class="form-horizontal">
+							<div class="control-group">
+								<label class="control-label" for="initialInput">Evaluate notification on</label>
+								<div class="controls">
+									<select class="input-medium" ng-model="n.initial" id="initialInput">
+										<option value="0">Initial submissions</option>
+										<option value="1">Submission updates</option>
+										<option value="2">Both</option>
+									</select>
+									<label class="checkbox inline">
+										<input type="checkbox" ng-model="n.emailUser"/>Email Submitter
+									</label>
+								</div>
+							</div>
+
+							<div class="control-group">
+								<label class="control-label" for="formatInput">Message Format</label>
+								<div class="controls">
+									<select ng-model="n.format" id=formatInput" id="notificationTypeSelect{{$index}}">
+										<option value="1">Plain Text</option>
+										<option value="2">HTML</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="control-group">
+								<label class="control-label" for="subjectInput">Subject</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" id="subjectInput" ng-model="n.subject" id="notificationSubjectInput{{$index}}" required/>
+								</div>
+							</div>
+
+							<div class="control-group">
+								<label class="control-label" for="bodyInput">Message Body</label>
+								<div class="controls">
+									<textarea rows="10" ng-model="n.body" class="input-xlarge" id="bodyInput" id="notificationBodyInput{{$index}}" required></textarea>
+								</div>
+								<input type="button" value="delete notification" ng-click="editorSvc.view.notifications.splice($index,1)"/>
+							</div>						
+						</ng-form>
+					</fieldset>
+				</div>
+				
+				<div class="span3">
+					<fieldset>
+						<legend>Field Variables</legend>	
+						<div class="field-variable pull-left">$submission-id</div>
+						<div class="field-variable pull-left">$submission-formName</div>
+						<div class="field-variable pull-left">$submission-user.name</div>
+						<div class="field-variable pull-left">$submission-user.email</div>
+						<div ng-repeat="v in fieldVariables" class="field-variable pull-left">$field-{{v}}</div>
+						
+					</fieldset>
+				</div>
+									
+				<div class="span4">
+					<!-- Recipients List -->
+					<fieldset>
+						<legend>Recipient Email Addresses</legend>
+						<div ng-repeat="r in n.recipients">
+							{{r.email}}
+							<a href ng-click="n.recipients.splice($index,1)">x</a>
+						</div>
+						<input type="text"
+							   ng-model="newRecipient.email"/>
+						<input type="button" 
+							   value="+"
+							   class="btn" 
+							   ng-click="addRecipient(n.recipients,newRecipient)"
+							   ng-disabled="!newRecipient.email"/>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Notification Conditions -->
+		<div class="row">
+			<div class="span10 offset2">
+				<fieldset>
+					<legend>Conditions</legend>
+					
+					
+					<div class="row-fluid form-inline" ng-repeat="nc in n.notificationConditions">						
+								   								   
+						<div type="text" class="span3 pull-left">
+							<select ng-options="v.field.id as v.label for (k,v) in editorSvc.view.viewFields"
+									ng-model="nc.target.id"
+									ng-required="n.notificationConditions[0]!=nc"></select>
+						</div>
+						
+						<div class="span3 pull-left">
+							<select ng-options="v.id as v.name for (k,v) in comparisonTypes"									
+									ng-model="nc.comparison"
+									required></select>
+						</div>
+						
+						<div class="span3 pull-left">
+							<input type="text" class="input-medium" ng-model="nc.value" placeholder="Value" required/>
+						</div>
+						
+						<button class="btn pull-right"
+							    ng-click="n.notificationConditions.splice($index,1)">
+							<i class="icon-remove"></i>
+						</button>					
+						
+					</div>
+					
+					<input type="button" 
+						   value="add condition"
+						   ng-click="addNotificationCondition(n.notificationConditions)"/>	
+									
+				</fieldset>
+			</div>
+		</div>
+	
+	</div>
+		
+	<div style="clear:both"></div>
+	
+	<input type="button" 
+		   value="New Notification" 
+		   class="editorNewButton" 
+		   id="viewEditor_newNotificationButton"
+		   ng-click="addNotification()"/>
+</div>

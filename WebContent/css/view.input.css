@@ -1,0 +1,12 @@
+input.ng-invalid, select.ng-invalid, textarea.ng-invalid { border: solid 1px red; }
+
+.requiredStar {
+	color:#ff0000;
+	margin:0 20px 0 5px;
+}
+
+#loginModalError { display:none; }
+
+.form-horizontal .control-group { margin-bottom:0px !important; }
+
+.user-label { display: none; }

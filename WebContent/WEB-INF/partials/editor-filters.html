@@ -1,0 +1,52 @@
+<div class="container">
+	<ng-form class="form-inline">
+		<div class="row" ng-repeat="f in editorSvc.view.filters">
+		
+			<div class="span2 pull-left">
+				<label>Label
+					<input class="input-medium" ng-model="f.label" type="text" required/>
+				</label>			
+			</div>
+
+			<div class="span2 pull-left">
+				<label>Target
+					<select ng-options="v.field.id as v.label for (k,v) in editorSvc.view.viewFields"
+							class="input-medium"
+							ng-model="f.target.id"
+							required></select>
+				</label>				
+			</div>
+			
+			<div class="span2 pull-left">
+				<label>Comparison
+					<select ng-options="v.id as v.name for (k,v) in comparisonTypes"
+							class="input-medium"
+							ng-model="f.comparison"
+							required></select>
+				</label>				
+			</div>
+			
+			<div class="span2 pull-left">
+				<label>Value						
+					<input class="input-medium" ng-model="f.value" type="text" required/>
+				</label>					
+			</div>
+			
+			<div class="span2 pull-left">
+				<div class="pull-left">
+					<label>Always On						
+						<input class="" type="checkbox" ng-model="f.staticFlag"/>						
+					</label>		
+				</div>
+				<div class="pull-left">
+					<input class="btn" type="button" ng-click="dashboardSvc.filters.splice($index,1)" value="Delete Filter"/>
+				</div>
+			</div>
+										
+		</div>						
+				
+		<input type="button" 
+			   value="add filter"
+			   ng-click="addFilter()"/>		
+	</ng-form>
+</div>	

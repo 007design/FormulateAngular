@@ -1,0 +1,33 @@
+#submissionsTable { width:100%; }
+#historyTable { width:100%; font-size:11px; text-align:left; }
+#historyModal {
+	width:auto;
+	text-align:center;
+	left:20px;
+	right:20px;
+	margin:0 auto 0 auto; 
+}
+
+/**
+ * Bootstrap overrides
+ */
+ 
+.pagination {
+	height:auto;
+}
+
+.pagination a {
+	line-height:18px;
+	padding:0 5px;
+}
+
+.modal {
+	position:relative;
+	left:auto;
+	width:960px;
+	margin:0 auto;
+}
+
+.navbar-inner {
+	filter:none !important;
+}

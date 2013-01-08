@@ -1,0 +1,34 @@
+<div id="fieldsEditor" class="editorArea">
+	<ng-form id="formEditor_form" name="formEditor_form">
+		<div id="fieldsEditor_header" class="editorHeader">
+			Form Name:
+			<input type="text" ng-model="editorSvc.form.name" required/>										
+		</div>
+		
+		<div id="fieldsEditor_fieldsList">
+			<div class="fieldEditor_fieldRow" ng-repeat="f in editorSvc.form.fields">
+				Field Name: <input type="text" ng-model="f.name"/>
+				<button class="btn" ng-click="showOptions = !showOptions">Options</button>
+				<button class="btn" ng-click="editorSvc.form.fields.splice($index,1)">Delete Field</button>
+				
+				<fieldset ng-show="showOptions"
+						  id="fieldsEditor_optionsArea{{$index}}" 
+						  class="fieldsEditor_optionsArea">
+					<legend>Options</legend> 
+					<div ng-repeat="o in f.fieldOptions">
+						<input type="text" ng-model="o.value" required/>
+						<a href ng-click="f.fieldOptions.splice($index,1)">x</a>
+						<input type="checkbox"
+						   ng-model="o.defaultValue"
+						   ng-click="setDefault(o, f.fieldOptions)"/>
+					</div>
+					
+					<button class="btn"  
+						    ng-click="addOption(f)">New Option</button>
+				</fieldset>
+			</div>
+			<div class="clearFloat"></div>
+			<button class="btn" ng-click="addField()">New Field</button>
+		</div>
+	</ng-form>
+</div>

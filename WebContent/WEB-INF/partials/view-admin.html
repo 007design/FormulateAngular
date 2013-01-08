@@ -1,0 +1,64 @@
+<div id="formsList" class="row">
+	<h2>Forms</h2>
+	
+	<div class="well">
+		<ul class="nav nav-list">
+			<li ng-repeat="f in forms">
+				<a href class="pull-right" ng-click="editForm(f)">Edit</a>
+				<a href ng-click="showViews = !showViews">
+					<i class="icon-chevron-right" ng-hide="showViews"></i>
+					<i class="icon-chevron-down" ng-show="showViews"></i>
+					{{f.name}}
+				</a>
+				<ul class="nav nav-list" ng-show="showViews">
+					<li ng-repeat="v in f.views | orderBy:'account.id'" ng-show="userSvc.user.account.id == v.account.id">
+						<div class="pull-right" style="margin-left:10px;">
+							<a href="{{contextPath}}/form/{{v.account.alias}}/{{v.alias}}" target="_blank" ng-show="v.enableInput">Input</a>
+							<span ng-hide="v.enableInput">Input</span>
+						</div>
+						<div class="pull-right" style="margin-left:10px;">
+							<a href="{{contextPath}}/form/{{v.account.alias}}/{{v.alias}}" target="_blank" ng-show="v.enableDashboard">Dashboard</a>
+							<span ng-hide="v.enableDashboard">Dashboard</span>
+						</div>
+						<div class="pull-right" style="margin-left:10px;">
+							<a href="{{contextPath}}/form/{{v.account.alias}}/{{v.alias}}" target="_blank" ng-show="v.enableUpdate">Update</a>
+							<span ng-hide="v.enableUpdate">Update</span>
+						</div>
+						<a href="{{contextPath}}/edit/{{v.account.alias}}/{{v.alias}}">{{v.name}}</a>
+					</li>
+					<li ng-repeat="v in f.views | orderBy:'account.id'" ng-hide="userSvc.user.account.id == v.account.id">					
+						<span style="color:#999;">[{{v.account.alias}}] {{v.name}}</span>
+					</li>	
+					<li>
+						<input type="text" ng-model="newViewName" placeholder="New View Name"/><button class="btn" ng-disabled="!newViewName" ng-click="createView(f, newViewName)">New View</button>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<input type="text" ng-model="newFormName" placeholder="New Form Name"/><button class="btn" ng-disabled="!newFormName" ng-click="createForm(newFormName)">New Form</button>
+			</li>
+		</ul>
+		
+		
+		<hr/>
+		
+		<div ng-show="editorSvc.form" ng-controller="FormEditorCtrl">			
+				<input type="submit" 
+					   value="Save" 
+					   class="btn pull-right" 
+					   id="fieldsEditor_saveButton" 
+					   ng-disabled="isSaveDisabled()"
+					   ng-click="save()"/>
+				<input type="button" 
+					   value="Cancel" 
+					   class="btn pull-right" 
+					   id="fieldsEditor_cancelButton" 
+					   ng-disabled="isCancelDisabled()"
+					   ng-click="cancel()"/>
+					   
+				<h3>Edit Form</h3>	
+			<ng-include src="contextPath+'/partials/editor-form'"></ng-include>
+		</div>		
+	</div>
+	
+</div>

@@ -1,0 +1,30 @@
+#inputFormArea {
+	background:#cad6da url('../header-bg.jpg') top center repeat-x;
+}
+
+#headerArea {
+	height:76px;
+	position:relative;
+	margin-bottom:10px;
+}
+
+#headerRight {
+	float:right;
+	background:url('../header-right.jpg') top right no-repeat;
+	height:76px;
+	width:335px;
+}
+#headerLeft { 
+	float:left; 
+	background:url('../header-left.jpg') top left no-repeat;
+	height:76px;
+	width:226px;
+}
+
+.fieldInputArea_checkboxes {
+	font-size:11px;
+} 
+
+.fieldLabelArea {
+	width:120px;
+}

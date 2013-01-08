@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="span6">
+			<input type="text" ng-model="filterString" placeholder="Filter" />
+			<table class="table table-condensed table-bordered table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Username</th>
+						<th>Email</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in editorSvc.users | filter:filterString" ng-class="isActive(user.hasView)">
+						<td>
+							<input type="checkbox" ng-model="user.hasView"/>
+						</td>
+						<td><a href ng-click="editUser(user)">{{user.name}}</a></td>
+						<td>{{user.email}}</td>
+						<td>{{user.id}}</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+		<div class="span6" ng-controller="UserEditorCtrl">
+			<ng-include src="contextPath+'/partials/editor-user'"></ng-include>
+		</div>	
+	</div>
+		
+</div>

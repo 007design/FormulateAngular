@@ -1,0 +1,43 @@
+input.ng-invalid, select.ng-invalid, textarea.ng-invalid { border: solid 1px red; }
+
+.display-value {
+	padding:5px 0 0 10px;
+	color:#666;
+}
+
+.form-horizontal .control-label {
+	margin-right:10px;
+}
+
+.requiredStar {
+	color:#ff0000;
+}
+
+.form-horizontal .control-group { margin-bottom:0px !important; }
+
+#thinkingArea {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	text-align:center;
+}
+
+#thinkingOverlay {	
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	background-color:#000;
+	opacity:0.30;
+}
+
+#thinkingThrobber {
+	position:relative;
+	margin:200px auto 0px auto;
+	height:66px;
+	width:66px;
+	background:url('../images/loading.gif') center center no-repeat;
+}

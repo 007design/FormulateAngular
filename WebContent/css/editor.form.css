@@ -1,0 +1,39 @@
+input.ng-invalid, 
+select.ng-invalid { 
+	border: solid 1px red; 
+}
+		
+body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+	width:100%;
+	font-family:sans-serif;
+	font-size:12px;
+}
+
+.floatFrame {
+	float:left;
+}
+.clearFloat {
+	clear:both;
+}
+
+#pageArea {
+	position:relative;
+	top:0px;
+	left:0px;
+	display:block;
+	margin:0px;
+	padding:0px;
+	height:100%;
+	width:100%;
+}
+
+#formEditor_form {}
+
+#formPropertiesArea {}
+
+#formEditor_fieldsList {}
+.formEditor_fieldRow {}
+.formEditor_optionsArea {}

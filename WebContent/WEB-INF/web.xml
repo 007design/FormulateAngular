@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+	<display-name>Formulate</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+  
+  <!-- Error Pages -->
+	<error-page>
+		<error-code>412</error-code>
+		<location>/WEB-INF/jsp/error-412.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/jsp/error-404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/jsp/error-500.jsp</location>
+	</error-page>
+  
+  <!-- DB Resources -->
+	<env-entry>
+		<env-entry-name>DBServerName</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>localhost</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>DBServerPort</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>3306</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>DBServerDatabase</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>formulate</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>DBServerUser</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>formulate</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>DBServerPassword</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>formulate</env-entry-value>
+	</env-entry>
+	<env-entry>
+		<env-entry-name>EmailServer</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>yourmailserver.com</env-entry-value>
+	</env-entry>
+  
+  <!-- Context Params -->
+	<context-param>
+		<param-name>ViewFiles</param-name>
+		<param-value>c:/appdata/formulate/views</param-value>
+	</context-param>
+	<context-param>
+		<param-name>UploadTempLocation</param-name>
+		<param-value>c:/appdata/formulate/temp</param-value>
+	</context-param>
+	<context-param>
+		<param-name>SubmissionUploadLocation</param-name>
+		<param-value>c:/appdata/formulate/submissionuploads</param-value>
+	</context-param>
+	<context-param>
+		<param-name>CssLocation</param-name>
+		<param-value>c:/appdata/formulate/css</param-value>
+	</context-param>
+	<context-param>
+		<param-name>JsLocation</param-name>
+		<param-value>c:/appdata/formulate/js</param-value>
+	</context-param>
+  
+  <!-- Stripes -->
+	<filter>
+		<filter-name>DynamicMappingFilter</filter-name>
+		<filter-class>net.sourceforge.stripes.controller.DynamicMappingFilter</filter-class>
+		<init-param>
+			<param-name>ActionResolver.Packages</param-name>
+			<param-value>com.lcp.formulate.stripes.action</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Extension.Packages</param-name>
+			<param-value>com.lcp.formulate.stripes.extensions</param-value>
+		</init-param>
+		<!-- Lifecycle Interceptors -->
+		<init-param>
+			<param-name>Interceptor.Classes</param-name>
+			<param-value>
+				com.lcp.formulate.stripes.interceptors.ViewInterceptor,
+				com.lcp.formulate.stripes.interceptors.AjaxInterceptor
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>DynamicMappingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+</web-app>

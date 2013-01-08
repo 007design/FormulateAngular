@@ -1,0 +1,159 @@
+/* input { */
+/* 	font-size:12px; */
+/* 	padding:1px; */
+/* 	border:1px solid #666; */
+/* } */
+
+/* body { */
+/* 	margin:0px; */
+/* 	padding:0px; */
+/* 	font-family:sans-serif; */
+/* 	font-size:12px; */
+/* } */
+
+/* #pageArea { */
+/* 	position:relative; */
+/* 	height:100%; */
+/* 	width:100%;	 */
+/* 	text-align:center; */
+/* } */
+
+/* #contentArea { */
+/* 	position:relative; */
+/* 	margin:0px auto 0px auto; */
+/* 	width:1000px; */
+/* 	text-align:left; */
+/* } */
+
+/* #userPropertiesArea { */
+/* 	width:100%; */
+/* } */
+
+/* .propertyCell { */
+/* 	float:left; */
+/* 	width:300px; */
+/* } */
+
+/* .propertyTitle { */
+/* 	float:left; */
+/* 	font-weight:bold; */
+/* } */
+
+/* .propertyInput {	 */
+/* } */
+
+/* .logoutButton { */
+/* 	float:right; */
+/* } */
+
+/* .viewsArea { */
+/* } */
+
+/* #formsAreaHeader { */
+/* 	padding:4px; */
+/* 	border-bottom: 1px solid #ccc; */
+/* 	font-weight:bold; */
+/* 	font-size:16px; */
+/* } */
+
+/* .viewsAreaHeader { */
+/* 	padding:4px 4px 4px 10px; */
+/* 	border-bottom: 1px solid #ccc; */
+/* 	font-weight:bold; */
+/* 	font-size:14px; */
+/* } */
+
+/* #formsList { */
+/* 	float:left; */
+/* 	width:55%; */
+/* } */
+
+/* .formRow { */
+/* } */
+
+/* .editFormLink { */
+/* 	padding:4px; */
+/* 	border-bottom: 1px solid #ccc; */
+/* } */
+
+/* .viewRow { */
+/* 	padding:2px 2px 2px 20px; */
+/* } */
+
+/* .inputLink { */
+/* 	float:left; */
+/* 	width:100px; */
+/* } */
+
+/* .dashboardLink { */
+/* 	float:right; */
+/* } */
+
+/* .editViewLink { */
+/* 	float:right; */
+/* } */
+
+/* .createViewArea { */
+/* 	margin-top:10px; */
+/* 	text-align:right; */
+/* } */
+
+/* .createViewInput { */
+/* } */
+
+/* .createViewButton { */
+/* } */
+
+/* #createFormArea { */
+/* 	margin-top:10px; */
+/* } */
+
+/* #createFormInput { */
+/* } */
+
+/* #createFormButton { */
+/* } */
+
+/* #usersAreaHeader { */
+/* 	font-weight:bold; */
+/* 	font-size:16px; */
+/* } */
+
+/* #usersListArea { */
+/* 	float:right; */
+/* 	width:43%; */
+/* } */
+
+/* .usersRow { */
+/* 	padding:2px; */
+/* } */
+
+/* .usersEditor_nameArea, */
+/* .usersEditor_emailArea { */
+/* 	width:180px; */
+/* 	float:left; */
+/* 	padding:2px; */
+/* 	font-size:11px; */
+/* 	overflow:hidden; */
+/* 	height:25px; */
+/* 	border-bottom:1px solid #ddd; */
+/* } */
+
+/* .usersEditor_nameArea input, */
+/* .usersEditor_emailArea input { */
+/* 	width:100%; */
+/* } */
+
+/* .usersEditor_buttonArea { */
+/* 	float:right; */
+/* } */
+
+/* #createUserArea { */
+/* } */
+
+/* .createUserInput { */
+/* } */
+
+/* .createUserButton { */
+/* 	display:block; */
+/* } */

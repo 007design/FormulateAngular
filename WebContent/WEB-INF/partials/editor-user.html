@@ -1,0 +1,36 @@
+<ng-form class="form-horizontal" name="userEditor_form">
+	
+	<div class="control-group">
+		<label class="control-label" for="usernameInput">Username</label>
+		<div class="controls">
+			<input type="text" class="input-large" id="usernameInput" ng-model="userSvc.editUser.name" ng-required="userSvc.editUser">
+			<p class="help-block">This is your login name.</p>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="emailInput">Email</label>
+		<div class="controls">
+			<input type="email" class="input-large" id="emailInput" ng-model="userSvc.editUser.email" ng-required="userSvc.editUser">
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="passwordInput1">Change Password</label>
+		<div class="controls">
+			<input type="password" class="input-large" id="passwordInput1" ng-model="userSvc.editUser.password" placeholder="Type new password to change">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="passwordInput2">Retype New Password</label>
+		<div class="controls">
+			<input type="password" class="input-large" id="passwordInput2" ng-model="password2" placeholder="Retype new password to change">
+		</div>
+	</div>
+
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary" ng-click="saveUser(userSvc.editUser)" ng-disabled="userEditor_form.$invalid || userSvc.editUser.password != password2">Save changes</button>
+		<button class="btn" class="btn" ng-click="userSvc.editUser = null">Cancel</button>
+	</div>
+		
+</ng-form>	

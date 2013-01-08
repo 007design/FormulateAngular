@@ -1,0 +1,142 @@
+/* input.ng-invalid,  */
+/* select.ng-invalid, */
+/* textarea.ng-invalid {  */
+/* 	border: solid 1px red;  */
+/* } */
+
+.field-toggle-buttons {
+	width:160px;
+	margin-top:20px;
+}
+.field-tab-buttons {
+	margin-top:20px;
+}
+
+.field-variable {
+	width:135px;
+	font-size:11px;
+}
+
+#thinkingArea {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	text-align:center;
+}
+
+#thinkingOverlay {	
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	background-color:#000;
+	opacity:0.30;
+}
+
+#thinkingThrobber {
+	position:relative;
+	margin:200px auto 0px auto;
+	height:66px;
+	width:66px;
+	background:url('../images/loading.gif') center center no-repeat;
+}
+
+.viewfield-row {
+	padding-top:4px; 
+}
+
+.viewfield-row label,
+.viewfield-triggers label,
+.viewfield-options label {
+	line-height:12px;
+	margin-bottom:2px;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.viewfield-row .input-medium {
+	margin-bottom:4px;
+	padding:2px;
+	height:24px;
+	font-size:12px;
+}
+.viewfield-row input.input-medium,
+.viewfield-options input.input-medium,
+.viewfield-triggers input.input-medium {
+	padding:0px 2px 0px 2px;
+	height:24px;
+	font-size:12px;
+}
+
+.viewfield-row .nav-pills {
+	margin:10px 0px 0px 0px;
+}
+
+.viewfield-row .nav-pills li a {
+	font-size:12px;
+	padding:4px
+}
+.viewfield-row .nav-pills .close {
+	padding:4px
+}
+
+.viewfield-row .span3.well.viewfield-options {
+	width:280px;
+	margin-left:20px;
+	margin-bottom:4px;
+}
+
+#viewFieldsList h4 {
+	margin-bottom:4px;
+	padding-bottom:6px;
+	border-bottom:1px solid #ddd;
+}
+
+#viewFieldsList h5 {
+	margin-bottom:1px;
+	padding-bottom:1px;
+	border-bottom:1px solid #ddd;
+}
+
+.viewfield-row .span9.well.viewfield-triggers {
+	float:right;
+	margin-left:0px;
+}
+
+.viewfield-triggers div.span3.trigger-properties {
+	width:150px;
+}
+
+.trigger-conditions .span3 {
+	width:120px;
+	margin:0px 4px 0px 0px;
+}
+
+.trigger-conditions .span3 input,
+.trigger-conditions .span3 select {
+	width:100%;
+}
+
+.options-default {
+	margin-left:4px;
+}
+
+.viewfield-sequence {
+	min-width:35px;
+	width:35px;
+	padding:0px 0px 0px 5px;
+	margin-right:10px;
+}
+
+.even { background-color:#ccc; }
+.odd { background-color:#eee; }
+
+.well { 
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:5px;
+	padding-right:5px;
+}
