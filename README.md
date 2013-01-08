@@ -17,6 +17,7 @@ The downloaded jars will need to be placed in the /WEB-INF/lib folder of the exp
 If you actually get the app running here are some URL's to try.<br>
 Be sure to update the server and port as necessary. This assumes the webapp is deployed to the 'formulate' context.<br>
 localhost:8080/formulate/docs.html<br>
+localhost:8080/formulate/demo/index.html<br>
 localhost:8080/formulate/edit/fbn/productform (login with admin/test)<br>
 localhost:8080/formulate/form/fbn/productform
 <br><br>
